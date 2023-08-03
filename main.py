@@ -11,9 +11,9 @@ import plotly.graph_objects as go
 app = Flask(__name__)
 
 #ONLY FOR LOCAL USE
-CREDS = "C:\\Users\\TK\Desktop\\msds434-final-project-394614-b62f7818785f.json"
-client = bigquery.Client.from_service_account_json(json_credentials_path=CREDS,project='msds434-final-project-394614')
-#client = bigquery.Client(project='msds434-module6')
+#CREDS = "C:\\Users\\TK\Desktop\\msds434-final-project-394614-b62f7818785f.json"
+#client = bigquery.Client.from_service_account_json(json_credentials_path=CREDS,project='msds434-final-project-394614')
+client = bigquery.Client(project='msds434-final-project-394614')
 
 dset = 'finalproj'
 final_model = 'finalproj.model_kmeans'
