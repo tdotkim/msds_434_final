@@ -7,6 +7,7 @@ from flask import Flask, render_template, request, escape
 import json
 import plotly
 import plotly.graph_objects as go
+import logging
 
 app = Flask(__name__)
 
@@ -172,6 +173,7 @@ def data():
         """
 
         df = client.query(query).to_dataframe()
+        logging.info(records)
         return render_template('data.html',tables=[df.to_html(max_rows=20,classes='data')], titles=['predictions'])
     
  
