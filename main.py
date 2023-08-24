@@ -174,6 +174,7 @@ def data():
 
         df = client.query(query).to_dataframe()
         logging.info(records)
+        logging.warning('test message')
         return render_template('data.html',tables=[df.to_html(max_rows=20,classes='data')], titles=['predictions'])
     
  
