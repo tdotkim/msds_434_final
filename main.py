@@ -91,7 +91,7 @@ def index():
     
     # include visualizations around model accuracy
     # include summary statistics around data
-    logging.info('sample log regarding launch')
+    logging.warning('sample log regarding launch')
     return render_template('index.html',graphJSON=graphJSON, config=config)
 
 @app.route('/set_base_model')
@@ -163,7 +163,7 @@ def data():
         )  
 
         job.result()
-        logging.info('sample log regarding job result')
+        logging.warning('sample log regarding job result')
 
         # do the predict
         query = """
@@ -175,8 +175,8 @@ def data():
         """
 
         df = client.query(query).to_dataframe()
-        logging.info('sample log regarding prediction')
-        logging.info('sample message re: completion')
+        logging.warning('sample log regarding prediction')
+        logging.warning('sample message re: completion')
         return render_template('data.html',tables=[df.to_html(max_rows=20,classes='data')], titles=['predictions'])
     
  
